@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
-const jwt = require('jwt-simple');
+const jwt = require('jwt-simple')
+
+app.use(express.urlencoded()); // Form Data
+app.use(express.json()) // Body Parser(POST)
 
 var SECRIT = "STRING"
 var jwt_data = jwt.encode("Hello", SECRIT)
